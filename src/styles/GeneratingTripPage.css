@@ -1,0 +1,160 @@
+/* 生成行程页面样式 */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  padding: 20px 0;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.generating-container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.generating-animation {
+  margin-bottom: 30px;
+}
+
+.generating-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+h2.error-text {
+  color: #ff4d4f;
+}
+
+.progress-container {
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a90e2 0%, #36cfc9 100%);
+  border-radius: 5px;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.progress-bar-fill.error {
+  background: linear-gradient(90deg, #ff4d4f 0%, #ff7875 100%);
+}
+
+.progress-text {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.generating-tips {
+  color: #666;
+  line-height: 1.6;
+}
+
+.generating-tips p {
+  margin-bottom: 10px;
+}
+
+.error-tip {
+  color: #ff4d4f;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff1f0;
+  border-radius: 5px;
+  border: 1px solid #ffa39e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.retry-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.retry-btn:hover {
+  background-color: #ff7875;
+}
+
+/* 地球旋转动画 */
+.globe-spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(74, 144, 226, 0.2);
+  border-top-color: #4a90e2;
+  animation: spin 1.5s linear infinite;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
+  position: relative;
+}
+
+.globe-spinner::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #36cfc9;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .generating-container {
+    padding: 25px;
+  }
+  
+  .generating-container h2 {
+    font-size: 20px;
+  }
+  
+  .globe-spinner {
+    width: 60px;
+    height: 60px;
+  }
+} 
