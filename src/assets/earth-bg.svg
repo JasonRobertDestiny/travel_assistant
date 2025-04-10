@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Earth Background</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#A5D8FF" offset="0%"></stop>
+            <stop stop-color="#8BC4E8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Earth-Background" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Background" fill="url(#linearGradient-1)" x="0" y="0" width="800" height="600"></rect>
+        <path d="M400,520 C558.9,520 688,390.9 688,232 C688,73.1 558.9,-56 400,-56 C241.1,-56 112,73.1 112,232 C112,390.9 241.1,520 400,520 Z" id="Earth" fill="#7FB069" opacity="0.5"></path>
+        <path d="M240,232 C240,283.3 264.6,328.3 302.5,357.1 C340.4,385.9 390.4,410 400,410 C409.6,410 459.6,385.9 497.5,357.1 C535.4,328.3 560,283.3 560,232 C560,180.7 535.4,135.7 497.5,106.9 C459.6,78.1 409.6,54 400,54 C390.4,54 340.4,78.1 302.5,106.9 C264.6,135.7 240,180.7 240,232 Z" id="Ocean" fill="#5DA9E9" opacity="0.6"></path>
+        <path d="M358,168 C358,168 342,183 342,232 C342,281 358,296 358,296 L442,296 C442,296 458,281 458,232 C458,183 442,168 442,168 L358,168 Z" id="Continent-1" fill="#7FB069" opacity="0.5"></path>
+        <path d="M350,337 C350,337 330,337 320,310 C310,283 307,280 285,280 C263,280 240,290 240,290 C240,290 230,320 250,340 C270,360 290,370 320,370 C350,370 350,337 350,337 Z" id="Continent-2" fill="#7FB069" opacity="0.5"></path>
+        <path d="M450,125 C450,125 470,125 480,152 C490,179 493,182 515,182 C537,182 560,172 560,172 C560,172 570,142 550,122 C530,102 510,92 480,92 C450,92 450,125 450,125 Z" id="Continent-3" fill="#7FB069" opacity="0.5"></path>
+    </g>
+</svg> 

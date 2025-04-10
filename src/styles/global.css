@@ -1,0 +1,154 @@
+/* 全局样式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头部导航样式 */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-title {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-nav {
+  display: flex;
+  gap: 15px;
+  margin-right: auto;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #4a90e2;
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-avatar {
+  cursor: pointer;
+}
+
+/* 占位页面样式 */
+.placeholder-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.placeholder-page h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #4a90e2;
+}
+
+.placeholder-page p {
+  color: #666;
+}
+
+/* 生成页面样式 */
+.generating-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 行程详情页样式 */
+.trip-detail {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.trip-detail-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.trip-detail-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.trip-detail-notes, 
+.trip-detail-itinerary {
+  margin-top: 30px;
+}
+
+.trip-detail-notes h3,
+.trip-detail-itinerary h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* 错误和加载状态 */
+.error-container {
+  text-align: center;
+  padding: 40px 0;
+  color: #e74c3c;
+} 

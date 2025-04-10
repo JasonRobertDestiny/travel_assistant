@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "firecrawl": {
+      "env": {
+        "FIRE_CRAWL_API_KEY": "fc-93451bbf9c4042d087feb4fee44bf72b"
+      }
+    }
+  }
+} 
