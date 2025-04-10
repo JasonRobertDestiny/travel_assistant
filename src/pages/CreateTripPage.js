@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { Modal } from 'antd';
+import { createTrip } from '../api/tripService';
 import '../styles/CreateTripPage.css';
 
 function CreateTripPage() {
@@ -85,8 +86,19 @@ function CreateTripPage() {
     
     setLoading(true);
     
-    // 跳转到生成行程页面，并传递表单数据
-    navigate('/generating-trip', { state: { formData } });
+    try {
+      // 直接创建行程，跳过生成页面
+      const createdTrip = await createTrip(formData);
+      // 创建成功后直接跳转到行程详情页
+      navigate(`/itinerary/${createdTrip.id}`);
+    } catch (error) {
+      console.error('行程创建失败', error);
+      Modal.error({
+        title: '行程创建失败',
+        content: '很抱歉，行程创建过程中发生错误，请重试。'
+      });
+      setLoading(false);
+    }
   };
   
   const handleBack = () => {

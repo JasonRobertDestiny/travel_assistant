@@ -55,7 +55,7 @@ function GeneratingTripPage() {
       try {
         const createdTrip = await createTrip(formData);
         // 创建成功后跳转到行程详情页
-        navigate(`/trip/${createdTrip.id}`);
+        navigate(`/itinerary/${createdTrip.id}`);
       } catch (error) {
         console.error('行程创建失败', error);
         setError('行程创建失败，请重试');

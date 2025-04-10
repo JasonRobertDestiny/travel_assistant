@@ -1,0 +1,589 @@
+.itinerary-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.itinerary-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 左侧行程条 */
+.itinerary-sidebar {
+  width: 220px;
+  background-color: #f5f5f5;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  padding: 15px 0;
+}
+
+.sidebar-item {
+  padding: 12px 16px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-item:hover {
+  background-color: #e8e8e8;
+}
+
+.sidebar-item.active {
+  background-color: #e0e0e0;
+  border-left-color: #4285f4;
+}
+
+.day-label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.sidebar-places {
+  margin-top: 5px;
+}
+
+.sidebar-place-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  margin-left: 10px;
+  font-size: 0.9em;
+  color: #666;
+  cursor: grab;
+}
+
+.sidebar-place-item:active {
+  cursor: grabbing;
+}
+
+.place-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #666;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* 中间内容区域 */
+.itinerary-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* 时间滑块 */
+.time-range-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.time-range-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.time-display {
+  color: #4285f4;
+}
+
+.time-slider-wrapper {
+  padding: 0 10px;
+  position: relative;
+}
+
+.time-slider {
+  position: relative;
+  height: 30px;
+  margin: 10px 0 20px;
+}
+
+.time-slider-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #e0e0e0;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.time-slider-fill {
+  position: absolute;
+  height: 100%;
+  background-color: #4285f4;
+  border-radius: 2px;
+}
+
+.time-slider-handle {
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border: 2px solid #4285f4;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.time-slider-handle::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+}
+
+.time-slider-handle::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: none;
+}
+
+/* 行程列表 */
+.places-container {
+  margin-top: 20px;
+}
+
+.day-places {
+  margin-bottom: 30px;
+}
+
+.day-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.place-item {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  padding: 16px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.place-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.place-icon {
+  font-size: 24px;
+  margin-right: 16px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+}
+
+.place-info {
+  flex: 1;
+}
+
+.place-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.place-time {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.place-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.place-connector {
+  position: absolute;
+  left: 35px;
+  bottom: -20px;
+  height: 20px;
+  z-index: 1;
+}
+
+.connector-line {
+  width: 2px;
+  height: 100%;
+  background-color: #ddd;
+  margin-left: 5px;
+}
+
+.place-actions {
+  display: flex;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* 右侧地图 */
+.itinerary-map {
+  width: 40%;
+  position: relative;
+  background-color: #f5f5f5;
+  border-left: 1px solid #ddd;
+}
+
+.map-container {
+  height: 100%;
+  position: relative;
+}
+
+.map-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* 添加背景色作为备用 */
+  background-size: cover;
+  background-position: center;
+}
+
+.map-route {
+  position: absolute;
+  z-index: 2;
+}
+
+.map-route.day1 {
+  /* 第一天路线样式 */
+  border: 2px solid #ff4444;
+}
+
+.map-route.day2 {
+  /* 第二天路线样式 */
+  border: 2px solid #2196F3;
+}
+
+.map-route.day3 {
+  /* 第三天路线样式 */
+  border: 2px solid #4CAF50;
+}
+
+.map-route.inactive {
+  opacity: 0.3;
+}
+
+.map-controls {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3;
+}
+
+.map-zoom-in,
+.map-zoom-out {
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* AI助手 */
+.ai-assistant {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: height 0.3s;
+  z-index: 100;
+  height: 50px;
+}
+
+.ai-assistant.expanded {
+  height: 300px;
+}
+
+.ai-header {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #eee;
+}
+
+.ai-collapse-btn {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.ai-content {
+  padding: 15px;
+  height: calc(100% - 110px);
+  overflow-y: auto;
+}
+
+.ai-response {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ai-input-form {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.ai-input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+.ai-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #4285f4;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 底部工具栏 */
+.itinerary-tools {
+  position: absolute;
+  bottom: 20px;
+  left: 240px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.transport-selector {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.transport-header {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+
+.toggle-arrow {
+  font-size: 12px;
+}
+
+.transport-options {
+  display: flex;
+  padding: 10px;
+  gap: 8px;
+}
+
+.transport-option {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.transport-option.active {
+  background-color: #e3f2fd;
+  border-color: #2196F3;
+  color: #2196F3;
+}
+
+.booking-btn {
+  padding: 12px 20px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+}
+
+.booking-btn:hover {
+  background-color: #3367d6;
+}
+
+/* 目的地详情抽屉 */
+.place-detail {
+  padding: 10px 0;
+}
+
+.place-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.place-photo {
+  width: calc(33.33% - 7px);
+  height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.place-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.place-detail-info {
+  padding: 0 5px;
+}
+
+.place-meta {
+  margin-top: 20px;
+}
+
+.meta-item {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.meta-label {
+  width: 100px;
+  font-weight: 500;
+  color: #666;
+}
+
+.meta-value {
+  flex: 1;
+}
+
+/* 预约弹窗 */
+.booking-options {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.booking-option {
+  margin-bottom: 15px;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.map-marker {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.day1 .map-marker {
+  background-color: #FF5252;  /* 红色 */
+}
+
+.day2 .map-marker {
+  background-color: #2196F3;  /* 蓝色 */
+}
+
+.day3 .map-marker {
+  background-color: #4CAF50;  /* 绿色 */
+}
+
+.route-line {
+  z-index: 2;
+}
+
+.map-route.inactive .map-marker,
+.map-route.inactive .route-line path {
+  opacity: 0.3;
+}
+
+.marker-label {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+} 

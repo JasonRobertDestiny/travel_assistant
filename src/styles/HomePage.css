@@ -42,7 +42,9 @@
 .static-earth {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(135deg, #1a2b4e 0%, #2c3e50 50%, #0a192f 100%);
+  background-image: url('/image/Earth.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +56,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 20%, transparent 70%);
+  background-color: rgba(0, 0, 0, 0.4);  /* 半透明黑色遮罩 */
+  z-index: 1;
 }
 
 .create-trip-button-container {
